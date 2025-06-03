@@ -39,6 +39,6 @@ Each company is linked to a fund via `fund_info`. Analyze the following:
 
 - What **additional metric(s)** would you propose to evaluate fund performance?
 
-
+*ESG metrics as these are increasingly the subject of regulation, with larger companies especially beginning to be required to report on them. Funds which perform poorly on these metrics may also be at risk of suffering from the consequences of company reputational damage in the future.*
 
 > 💡 Bonus: Explain why your proposed metric(s) could be useful to stakeholders.
