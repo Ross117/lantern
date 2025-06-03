@@ -4,11 +4,11 @@ WITH company_report_rebuilt AS (
     FROM
         {{ ref('company_report_rebuilt') }}
 ), 
-    new_transactions AS (
+    new_transactions_cleaned AS (
         SELECT
             *
         FROM
-            {{ source('transactions', 'new_transactions') }}
+            {{ ref('new_transactions_cleaned') }}
     )
 
 SELECT
@@ -21,37 +21,28 @@ UNION
 SELECT
     dc.company_id,
     nt.company,
-    CASE
-        WHEN nt.date BETWEEN '2025-01-01' AND '2025-03-31' 
-            THEN '2025-01-01' 
-        WHEN nt.date BETWEEN '2025-04-01' AND '2025-06-30' 
-            THEN '2025-04-01' 
-        WHEN nt.date BETWEEN '2025-07-01' AND '2025-09-30' 
-            THEN '2025-07-01' 
-        WHEN nt.date BETWEEN '2025-10-01' AND '2025-12-31' 
-            THEN '2025-10-01' 
-    END as quarter,
+    quarter,
     SUM(CASE
-            WHEN nt."Transaction Type" = 'Sales of Item'
+            WHEN nt.transaction_type = 'Sales of Item'
             THEN amount
             ELSE 0
         END) as sales_amount,
     SUM(CASE
-            WHEN nt."Transaction Type" = 'Buy Item Cost'
+            WHEN nt.transaction_type = 'Buy Item Cost'
             THEN amount
             ELSE 0
         END) as buy_cost_amount,
     SUM(CASE
-            WHEN nt."Transaction Type" IN ('Buy Item Cost', 'Upkeep Cost')
+            WHEN nt.transaction_type IN ('Buy Item Cost', 'Upkeep Cost')
             THEN amount
             ELSE 0
         END) as total_cost,
     SUM(CASE
-            WHEN nt."Transaction Type" = 'Sales of Item'
+            WHEN nt.transaction_type = 'Sales of Item'
             THEN amount
             ELSE 0
         END) as total_revenue,
-FROM new_transactions nt
+FROM new_transactions_cleaned nt
 INNER JOIN dim_company dc
     ON nt.Company = dc.current_company_name
 GROUP BY

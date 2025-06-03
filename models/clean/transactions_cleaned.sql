@@ -12,6 +12,7 @@ WITH raw_transations AS (
     )
 
 SELECT
+    c.company_id,
     c.current_company_name AS company,
     t.date,
     CASE

@@ -31,13 +31,14 @@ Each company is linked to a fund via `fund_info`. Analyze the following:
 
 - Which **fund** is performing the **best** overall?
 
-    
-
+   Fund 2, based on Profit since investment. 
 
 - Which fund has the **highest ROI**, based on Invested value and cash in bank?
 
+   Fund 2
 
 - What **additional metric(s)** would you propose to evaluate fund performance?
+
 
 
 > 💡 Bonus: Explain why your proposed metric(s) could be useful to stakeholders.
