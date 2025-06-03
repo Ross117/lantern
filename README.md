@@ -9,5 +9,10 @@ Answer the following questions using DBT models and SQL:
 
 - Which company is performing the **best** and the **worst**?
 
+    NanoBuild is performing the best as it has generated the largest profit.
+    ModuGear is has the smallest profit.
+    Profit is defined as  total_revenue - total_cost
 
 - Which company shows **the most growth** over time?
+
+    
