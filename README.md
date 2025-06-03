@@ -17,11 +17,21 @@ Answer the following questions using DBT models and SQL:
 
     NanoBuild had the highest growth in profit from the 1st to the 4th quarter, and also the highest growth in revenue.
 
+### 3. **Data Update Task**
+Update your models to reflect the following data correction:
+- The company **"TitanTech"** has been renamed to **"The Titan Tech"**.
+- This update is present in the `new_transactions` table.
+- Create a new company report with updated new_transactions 
+
+Done - the new company report is called company_report_updated
+
 ### 4. **Fund-Level Analysis**
 
 Each company is linked to a fund via `fund_info`. Analyze the following:
 
 - Which **fund** is performing the **best** overall?
+
+    
 
 
 - Which fund has the **highest ROI**, based on Invested value and cash in bank?
