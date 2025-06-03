@@ -3,14 +3,15 @@ WITH transactions_cleaned AS (
         *
     FROM {{ ref('transactions_cleaned')  }}
 ),
-    fund_info AS (
+    dim_company AS (
         SELECT
             *
-        FROM {{ source('transactions', 'fund_info') }}
+        FROM
+            {{ ref('dim_company') }}
     )
 
 SELECT
-    fi.company_id,
+    dc.company_id,
     tc.company,
     tc.quarter,
     SUM(CASE
@@ -34,8 +35,8 @@ SELECT
             ELSE 0
         END) as total_revenue,
 FROM transactions_cleaned tc
-INNER JOIN fund_info fi
-    ON tc.company = fi.company
+INNER JOIN dim_company dc
+    ON tc.company = dc.current_company_name
 GROUP BY
     1, 2, 3
 ORDER BY
