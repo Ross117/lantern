@@ -1,16 +1,9 @@
-WITH company_report_rebuilt AS (
+WITH company_profit AS (
     SELECT
         *
     FROM
-        {{ ref('company_report_rebuilt') }}
-), 
-    company_profit AS (
-        SELECT
-            *,
-            total_revenue - total_cost AS profit
-        FROM
-            company_report_rebuilt
-    )
+        {{ ref('company_profit') }}
+)
 
 SELECT
     company_id,

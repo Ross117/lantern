@@ -10,9 +10,24 @@ Answer the following questions using DBT models and SQL:
 - Which company is performing the **best** and the **worst**?
 
     NanoBuild is performing the best as it has generated the largest profit.
-    ModuGear is has the smallest profit.
-    Profit is defined as  total_revenue - total_cost
+    ModuGear is performing the worst has the smallest profit.
+    Profit is defined as total_revenue - total_cost
 
 - Which company shows **the most growth** over time?
 
-    
+    NanoBuild had the highest growth in profit from the 1st to the 4th quarter, and also the highest growth in revenue.
+
+### 4. **Fund-Level Analysis**
+
+Each company is linked to a fund via `fund_info`. Analyze the following:
+
+- Which **fund** is performing the **best** overall?
+
+
+- Which fund has the **highest ROI**, based on Invested value and cash in bank?
+
+
+- What **additional metric(s)** would you propose to evaluate fund performance?
+
+
+> 💡 Bonus: Explain why your proposed metric(s) could be useful to stakeholders.
