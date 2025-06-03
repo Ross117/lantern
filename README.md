@@ -1,15 +1,13 @@
-Welcome to your new dbt project!
+### 2. **Data Validation & Insight Generation**
 
-### Using the starter project
+Answer the following questions using DBT models and SQL:
 
-Try running the following commands:
-- dbt run
-- dbt test
+#### 🔍 Company-Level Analysis
+- Are companies misreporting data (e.g., discrepancies between `transactions` and `company_report`)?
+
+    Yes - test company_report_is_accurate is failing. OnmiCorp have misreported their sales figures.
+
+- Which company is performing the **best** and the **worst**?
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- Which company shows **the most growth** over time?

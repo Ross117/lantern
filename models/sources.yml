@@ -1,0 +1,12 @@
+sources:
+  - name: transactions
+    schema: main
+    tables:
+      - name: transactions
+        identifier: transactions
+      - name: company_report
+        identifier: company_report
+      - name: fund_info
+        identifier: fund_info
+      - name: new_transactions
+        identifier: new_transactions
